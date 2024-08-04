@@ -1,26 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + TS</title>
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800|arima:400|medievalsharp:400" rel="stylesheet" />
+        <meta name="description" content="Habilidades dos sobreviventes de Zombicide medieval">
+        <title>Sobreviventez</title>
     </head>
-    <body>
-        <div x-data>
-            <h1>
-                Welcome to the
-                <span x-text="$store.shop.name">shop-name</span>
-            </h1>
-            <div>
-                Here you can buy:
-                <ul>
-                    <template x-for="product in $store.shop.products">
-                        <li x-text="product"></li>
-                    </template>
-                </ul>
-            </div>
-        </div>
+    <body class="bg-[#dfd6c5] min-h-screen text-[#3e392b]">
         <script type="module" src="/src/main.ts"></script>
+        <main class="flex flex-col justify-start items-center min-h-screen px-4 py-8 bg-[url('flames.png')] bg-right-bottom bg-no-repeat">
+            <div class="max-w-4xl w-full" x-data="hab">
+                <div class="sticky top-4 flex items-center">
+                    <input type="text" name="search" id="search" class="block w-full rounded-md border-0 py-1.5 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#831c18] sm:text-sm sm:leading-6" x-model="search" placeholder="Search...">
+                </div>
+
+                <div class="">
+                    <div role="list" class="space-y-6">
+                        <template x-for="hability in filteredHabilities">
+                            <div class="overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6 divide-y divide-gray-200 [&_*]:py-4">
+                                <h3 class="text-xl font-bold font-[MedievalSharp] text-[#58402a]" x-text="hability.name"></h3>
+                                <p class="text-xl font-[Arima]" x-text="hability.description">
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

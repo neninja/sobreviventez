@@ -1,23 +1,14 @@
-import './style.css'
+import habilities from '../habilidades.json'
 import Alpine from 'alpinejs'
 
-window.Alpine = Alpine
+console.log(({ habilities }))
+console.log('--------------------')
 
-Alpine.store('shop', {
-  name: 'Alpine-Shop',
-  products: ['Swiss Alp Chocolate', 'Car Alpine A110'],
-})
-
-import habilities from '../habilidades.json'
+  Alpine.store('habilities', habilities)
+  console.log('.........................')
   Alpine.data('hab', () => ({
     search: '',
-    showDescription(name: string) {
-      const i = habilities.findIndex((hability) => {
-        return hability.name === name;
-      });
 
-      alert(habilities[i].description);
-    },
     allData: habilities,
     get filteredHabilities() {
       if (this.search === '') {
@@ -31,5 +22,3 @@ import habilities from '../habilidades.json'
       });
     }
   }))
-
-Alpine.start()
