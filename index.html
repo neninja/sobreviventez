@@ -17,10 +17,10 @@
                     <input type="text" name="search" id="search" class="block w-full rounded-md border-0 py-1.5 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#831c18] sm:text-sm sm:leading-6" x-model="search" placeholder="Search...">
                 </div>
 
-                <div class="">
+                <div>
                     <div role="list" class="space-y-6">
                         <template x-for="hability in filteredHabilities">
-                            <div class="overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6 divide-y divide-gray-200 [&_*]:py-4">
+                            <div class="overflow-hidden bg-white bg-opacity-90 px-4 py-4 shadow sm:rounded-md sm:px-6 divide-y divide-gray-200 [&_*]:py-4">
                                 <h3 class="text-xl font-bold font-[MedievalSharp] text-[#58402a]" x-text="hability.name"></h3>
                                 <p class="text-xl font-[Arima]" x-text="hability.description">
                             </div>
