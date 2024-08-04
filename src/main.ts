@@ -3,11 +3,6 @@ import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
 
-Alpine.store('shop', {
-  name: 'Alpine-Shop',
-  products: ['Swiss Alp Chocolate', 'Car Alpine A110'],
-})
-
 import habilities from '../habilidades.json'
   Alpine.data('hab', () => ({
     search: '',
